@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine3.21-bleeding
+    container_name: gitlab-runner
+    restart: always
+    volumes:
+      - ./config:/etc/gitlab-runner #	Persist runner configuration on the host
+      - /var/run/docker.sock:/var/run/docker.sock  # Let the runner control Docker on the host. Current setup is so that it uses python:3.11 image (this was specified when registering the runner) but installs MkDocs packages on the fly. The alternative could be to create an image where these packages are already installed, push it to a repo and update the image to be used in .gitlab-ci.yml
