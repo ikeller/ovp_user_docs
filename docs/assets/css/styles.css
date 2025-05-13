@@ -1,0 +1,5 @@
+/* Add padding before and after level-2 headers */
+h2 {
+    padding-top: 20px;   /* Adjust the top padding as needed */
+    padding-bottom: 20px; /* Adjust the bottom padding as needed */
+  }

@@ -1,0 +1,9 @@
+site_name: OVPrecision Data Upload
+theme:
+  name: mkdocs
+nav:
+  - Home: data_upload.md
+  - md5sums: md5sums.md
+  - WSL: wsl.md 
+extra_css:
+  - assets/css/styles.css
