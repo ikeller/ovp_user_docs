@@ -13,4 +13,4 @@ To deploy the page, run:
 kdocs gh-deploy --remote-name github --remote-branch gh-pages
 ```
 
-Your documentation should shortly be available at: https://ikeller.github.io/ovp_user_docs/data_upload.html
+Your documentation should shortly be available at: https://ikeller.github.io/ovp_user_docs/
