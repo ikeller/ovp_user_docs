@@ -2,7 +2,7 @@ site_name: OVPrecision Data Upload
 theme:
   name: mkdocs
 nav:
-  - Home: data_upload.md
+  - Home: index.md
   - md5sums: md5sums.md
   - WSL: wsl.md 
 extra_css:
