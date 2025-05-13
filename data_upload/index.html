@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Home - OVPrecision Data Upload</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../assets/css/styles.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OVPrecision Data Upload</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../md5sums/" class="nav-link">md5sums</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../wsl/" class="nav-link">WSL</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../md5sums/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#ovprecision-data-upload" class="nav-link">OVPrecision Data Upload</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1-create-a-pre-defined-folder-structure-on-your-local-computer" class="nav-link">1. Create a pre-defined folder structure on your local computer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-create-metadata-files" class="nav-link">2. Create metadata files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-name-data-files-using-pre-defined-format" class="nav-link">3. Name data files using pre-defined format</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-calculate-md5sums" class="nav-link">4. Calculate md5sums</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5-upload-files-to-leomed" class="nav-link">5. Upload files to LeoMed</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ovprecision-data-upload">OVPrecision Data Upload</h1>
+<p>The uploading procedure consists of the following 5 steps which are explained in more detail below.</p>
+<h2 id="1-create-a-pre-defined-folder-structure-on-your-local-computer">1. Create a pre-defined folder structure on your local computer</h2>
+<p>On your local computer, create the following nested folder structure, e.g., in Windows Explorer or Mac Finder.</p>
+<blockquote>
+<p><code>&lt;Sample-ID&gt;/&lt;Experiment-Date&gt;/&lt;Data-Stage&gt;/</code></p>
+</blockquote>
+<p>In this structure:</p>
+<ul>
+<li>
+<p><strong><code>&lt;Sample-ID&gt;</code></strong> is a placeholder for the unique identifier for each sample.</p>
+</li>
+<li>
+<p><strong><code>&lt;Experiment-Date&gt;</code></strong> is a placeholder for the date of the experiment in YYYYMMDD format, e.g., 20240131, as provided in the <strong>Experiment Date</strong> field in the metadata. For ctDNA and bkRNA-seq, it should correspond to the <strong>Sequencing End Date</strong> as provided in the metadata. <strong>This date is important for data tracking so please double-check carefully!</strong></p>
+</li>
+<li>
+<p><strong><code>&lt;Data-Stage&gt;</code></strong> represents the processing stage. It can take the following values,</p>
+<blockquote>
+<p><code>raw</code> (corresponding to experiment)<br />
+<code>derived</code> (corresponding to analysis)</p>
+</blockquote>
+</li>
+</ul>
+<p>Examples:</p>
+<p><code>myworkingdirectory/O-MABADAB/20250229/raw/</code><br />
+<code>myworkingdirectory/O-MABADAB/20250229/derived/</code></p>
+<h2 id="2-create-metadata-files">2. Create metadata files</h2>
+<p>Up to 3 files describing the metadata must be provided per sample (described below). For each data type and stage, we provide an Excel template, which serves as a reference to illustrate the required structure and column headers. You are not required to use the templates directly, but the file you submit must <strong>exactly match</strong> their format.<br></p>
+<p>Each template includes a header row followed by two rows showing the expected data types and an example. These two rows should be removed in your submission, which should include only the header and one row with your actual data.</p>
+<h3 id="21-sample-summary">2.1. Sample Summary</h3>
+<p>For each sample that exists in LabKey, you must provide a file summarizing the steps run for the sample. This requirement applies even to poor quality samples that are not processed further. In this case, leave empty all columns that are not applicable, i.e. you do not need to fill in the columns on experiment and analysis. We will automatically assume that they also failed. Please refer to table 1 for information on how the file should be named and where it should be saved.</p>
+<p>Table 1: QC metadata file specification</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Template</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1KoLBGn2FOFBTTOzx72GgrMRckuOxD1gm/edit?usp=sharing">QC_template.xlsx</a></td>
+</tr>
+<tr>
+<td>File format</td>
+<td>Tab-delimited text file (<code>.txt</code> or <code>.tsv</code>)</td>
+</tr>
+<tr>
+<td>File name</td>
+<td><code>&lt;sample-ID&gt;__QC_metadata.txt</code><br><br>Please note the double underscore after the sample ID!</td>
+</tr>
+<tr>
+<td>File location</td>
+<td>The file must be saved in the <code>&lt;Sample-ID&gt;/&lt;Experiment-Date&gt;/</code> directory<br>created in step 1, e.g.,<br><code>myworkingdirectory/O-MABADAB/20250229/O-MABADAB__QC_metadata.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h3 id="22-experiment-and-analysis">2.2. Experiment and Analysis</h3>
+<p>For all samples for which an experiment and/or analysis was performed, additional metadata files must be provided separately for each step. This data will then be automatically imported into LabKey.</p>
+<p>Table 2: Experiment metadata file specification</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Template</td>
+<td>Please refer to Table 4</td>
+</tr>
+<tr>
+<td>File format</td>
+<td>Tab-delimited text file (<code>.txt</code> or <code>.tsv</code>)</td>
+</tr>
+<tr>
+<td>File name</td>
+<td><code>&lt;sample-ID&gt;__experiment_metadata.txt</code><br><br>Please note the double underscore after the sample ID!</td>
+</tr>
+<tr>
+<td>File location</td>
+<td>The file must be saved in the corresponding experiment folder:<br><code>&lt;Sample-ID&gt;/&lt;Experiment-Date&gt;/raw</code><br>e.g., <code>myworkingdirectory/O-MABADAB/20250229/raw/O-MABADAB__experiment_metadata.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><br>
+Table 3: Analysis metadata file specification</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Template</td>
+<td>Please refer to Table 4</td>
+</tr>
+<tr>
+<td>File format</td>
+<td>Tab-delimited text file (<code>.txt</code> or <code>.tsv</code>)</td>
+</tr>
+<tr>
+<td>File name</td>
+<td><code>&lt;sample-ID&gt;__analysis_metadata.txt</code><br><br>Please note the double underscore after the sample ID!</td>
+</tr>
+<tr>
+<td>File location</td>
+<td>The file must be saved in the corresponding analysis folder:<br><code>&lt;Sample-ID&gt;/&lt;Experiment-Date&gt;/derived</code><br>e.g., <code>myworkingdirectory/O-MABADAB/20250229/derived/O-MABADAB__analysis_metadata.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><br>
+Table 4: Templates for the metadata file for different data types</p>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Data Stage</th>
+<th>Metadata Template</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apricot</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1pbX869ZwaFPOGX1R3NB8r-ncWqeO_F-5/edit?usp=sharing" target="_blank" rel="noopener">apx_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/SoX-is0nclWVJl0UatwFAKjHYhi7sOcT/edit?usp=sharing" target="_blank" rel="noopener">apx_derived_template</a></td>
+</tr>
+<tr>
+<td>Bulk RNA-seq</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1fC16LBMz2d4kCQn8KfnUdxrdrejDXlYS/edit?usp=sharing" target="_blank" rel="noopener">bkrna_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1q06AVJpbzu0rTfBoEDLe8u7Y5ahxN46T/edit?usp=sharing" target="_blank" rel="noopener">bkrna_derived_template</a></td>
+</tr>
+<tr>
+<td>ctDNA</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1GvWyyjiX4wOC2GcO-4zGhaLMn5JzbpBf/edit?usp=sharing" target="_blank" rel="noopener">ctdna_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/15x90NgVdlhErJZj3BPUAghtW2CLZhQVH/edit?usp=sharing" target="_blank" rel="noopener">ctdna_derived_template</a></td>
+</tr>
+<tr>
+<td>Flow Cytometry</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1xWIZHZCLNkv-SrDMPOE1nDCCdgCJ_vOx/edit?usp=sharing" target="_blank" rel="noopener">fc_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1vJWGwcJ9Vl9lQV6-DXgveMLWMCV5C8br/edit?usp=sharing" target="_blank" rel="noopener">fc_derived_template</a></td>
+</tr>
+<tr>
+<td>IMC</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1_bkCOEKTxFsVUYHo5DTodyvJVeK9FHfs/edit?usp=sharing" target="_blank" rel="noopener">imc_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1YPlKS5OeduMBPxjzP6qbFnqVEfvwkGPw/edit?usp=sharing" target="_blank" rel="noopener">imc_derived_template</a></td>
+</tr>
+<tr>
+<td>Pharmacoscopy</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1dWfhEDzlaCzoY76_9EONib-rf9o2ADpk/edit?usp=sharing" target="_blank" rel="noopener">pc_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1iijKxmlADP-7UjY5iwIsZxc3Ofnr97Y5/edit?usp=sharing" target="_blank" rel="noopener">pc_derived_template</a></td>
+</tr>
+<tr>
+<td>Targeted NGS (OCCA+)</td>
+<td>Raw</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1j8KhEIqmPhlbL_hGr44R1HgBN6cz9FOp/edit?usp=sharing" target="_blank" rel="noopener">occa_raw_template</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Derived</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1AHmwWVgfPt9ju4IBv9f_9Fq9ofq-GjxR/edit?usp=sharing" target="_blank" rel="noopener">occa_derived_template</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2 id="3-name-data-files-using-pre-defined-format">3. Name data files using pre-defined format</h2>
+<p>Filenames must follow this structure:</p>
+<blockquote>
+<p><code>&lt;Sample-ID&gt;-&lt;optional info&gt;__&lt;fixed name&gt;.&lt;ext&gt;</code></p>
+</blockquote>
+<p>The section before the <strong>double underscore</strong> starts with the OVPrecision sample ID and may include any additional information separated from the sample ID by a dash. The section after the double underscore is a fixed, standard name and extension that defines the file type and must be consistent across all samples. </p>
+<p>For example:</p>
+<p><code>O-MABADAB-my_sample_id1.my_run_id1__01.tiff</code><br />
+<code>O-MABADAB__multiqc_report.html</code></p>
+<h2 id="4-calculate-md5sums">4. Calculate md5sums</h2>
+<p>md5sums allow us to ensure that the files were not corrupted during the transfer from your local machine to LeoMed. Therefore, you need to provide md5sums for all files that you upload.</p>
+<p>For detailed instructions on calculating md5sums using a convenient script, refer to <a href="../md5sums/">this guide</a>. Using the script is optional, and you are free to choose an alternative method if you prefer. You can submit either a single md5sum file that contains checksums for all files in the folder, or provide a separate md5sum file for each individual file.</p>
+<p>After step 4, your data directories (raw and/or derived) will contain your data files, a metadata file and one or multiple files with md5sums. For example:</p>
+<pre><code>raw/
+  &lt;sample-ID&gt;-&lt;any name&gt;__01.tiff
+  &lt;sample-ID&gt;-&lt;any name&gt;__02.tiff
+  &lt;sample-ID&gt;__experiment_metadata.txt
+  checksums.md5
+</code></pre>
+<h2 id="5-upload-files-to-leomed">5. Upload files to LeoMed</h2>
+<p>We now have a local folder structure that could look, e.g., like this:</p>
+<pre><code>O-MABADAB/
+    20240131/
+        O-MABADAB__QC_metadata.txt
+        raw/
+            O-MABADAB__L001_R1.fastq.gz
+            O-MABADAB__L001_R2.fastq.gz
+            checksums.md5
+            O-MABADAB__experiment_metadata.txt
+        derived/
+            O-MABADAB__multiqc_report.html
+            checksums.md5
+            O-MABADAB__analysis_metadata.txt
+</code></pre>
+<p><strong>ETH members need to be connected to the ETH network via VPN</strong> before starting the upload. External users must make sure they are using an IP
+address that was allow-listed during the onboarding process.</p>
+<p>Instructions are provided for Linux and Mac users only. For Windows users, we highly recommend installing the Windows Subsystem for Linux (WSL), which then enables you to follow the same steps. Please find more details <a href="../wsl/">here</a>. <a href="mailto:irene.keller@sdsc.ethz.ch">Contact us</a> in case this is not a viable option for you.</p>
+<h3 id="initial-configuration">Initial Configuration</h3>
+<p>Before you upload data for the first time via the command line (Mac/Linux), you need to go through the following configuration step.
+This needs to be done only once.</p>
+<p>Add the following lines to the file ~/.ssh/config on your local computer. If this folder and/or file does not exist, you need to create it.</p>
+<pre><code># biomed tenant
+Host jump-biomed &lt;jumphost-name&gt;
+HostName &lt;jumphost-name&gt;
+IdentityFile &lt;path-to-your-private-key-file&gt;
+User &lt;username&gt;
+Port 22
+
+Host biomed &lt;login-node-name&gt;
+HostName &lt;login-node-name&gt;
+User &lt;username&gt;
+IdentityFile &lt;path-to-your-private-key-file&gt;
+IdentitiesOnly yes
+ProxyJump jump-biomed
+</code></pre>
+<p>The placeholders indicated by <code>&lt;&gt;</code> need to be replaced by actual values specific to your system.  </p>
+<ul>
+<li><strong><code>&lt;username&gt;</code></strong>, <strong><code>&lt;jumphost-name&gt;</code></strong> and <strong><code>&lt;login-node-name&gt;</code></strong> are in the email you received from LeoMed support during the onboarding process. This email includes a command structured as shown below, which shows the actual values to be used for each placeholder:<br />
+<code>ssh -J &lt;username&gt;@&lt;jumphost-name&gt; -l &lt;username&gt; &lt;login-node-name&gt;</code>  </li>
+<li><strong><code>&lt;path-to-your-private-key-file&gt;</code></strong> is the path to the file containing your private ssh key. When you requested access to LeoMed, you had to generate a public-private key pair, and you shared the public key with LeoMed support. Here, you need to provide the path to the matching private key file.</li>
+</ul>
+<p>Once this initial setup is complete, you can use the <code>rsync</code> commands in the next section, or log in to LeoMed as <code>ssh biomed</code>. </p>
+<h3 id="data-upload">Data Upload</h3>
+<p>From the command-line interface, navigate to the working directory where you created your main folder in step 1.</p>
+<pre><code>cd &lt;working directory&gt;
+# for example:
+cd /home/myprojects/ovprecision/imc
+</code></pre>
+<p>From the command-line interface, run the following command to copy the content of your local folder to your remote folder. Note that there
+should be <strong>NO forward slash ("/")</strong> after the local folder name. All required nested
+folders will be automatically created on LeoMed.</p>
+<pre><code>rsync -avzPR &lt;local-data-folder&gt; biomed:/cluster/work/tumorp/ovprecision/data-drop/&lt;technology&gt;/
+</code></pre>
+<p>The <code>&lt;technology&gt;</code> placeholder should be replaced by one of:  </p>
+<ul>
+<li><code>apx</code>  </li>
+<li><code>bkrna</code>  </li>
+<li><code>ctdna</code>  </li>
+<li><code>fc</code>  </li>
+<li><code>imc</code>  </li>
+<li><code>pcy</code>  </li>
+<li><code>occa+</code>   </li>
+</ul>
+<p>For example:<br />
+<code>rsync -avzPR O-MABADAB/20250229 biomed:/cluster/work/tumorp/ovprecision/data-drop/imc/</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
