@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://ikeller.github.io/ovp_user_docs/data_upload.html</loc>
+         <lastmod>2025-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ikeller.github.io/ovp_user_docs/md5sums.html</loc>
+         <lastmod>2025-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ikeller.github.io/ovp_user_docs/wsl.html</loc>
+         <lastmod>2025-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

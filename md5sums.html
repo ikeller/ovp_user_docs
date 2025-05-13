@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="canonical" href="https://ikeller.github.io/ovp_user_docs/md5sums.html">
+        <link rel="shortcut icon" href="img/favicon.ico">
         <title>md5sums - OVPrecision Data Upload</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <link href="../assets/css/styles.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
@@ -21,7 +21,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">OVPrecision Data Upload</a>
+                <a class="navbar-brand" href=".">OVPrecision Data Upload</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -32,13 +32,13 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../data_upload/" class="nav-link">Home</a>
+                                <a href="data_upload.html" class="nav-link">Home</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">md5sums</a>
+                                <a href="md5sums.html" class="nav-link">md5sums</a>
                             </li>
                             <li class="navitem">
-                                <a href="../wsl/" class="nav-link">WSL</a>
+                                <a href="wsl.html" class="nav-link">WSL</a>
                             </li>
                         </ul>
 
@@ -49,12 +49,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../data_upload/" class="nav-link">
+                                <a rel="prev" href="data_upload.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../wsl/" class="nav-link">
+                                <a rel="next" href="wsl.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -101,7 +101,7 @@
 <li><strong>One file per file</strong>: each checksum saved to a separate <code>.md5</code> file</li>
 </ul>
 <h3 id="location">Location</h3>
-<p>The script is available here: <a href="../scripts/md5sums_for_data_upload.sh"><code>scripts/md5sums_for_data_upload.sh</code></a></p>
+<p>The script is available here: <a href="scripts/md5sums_for_data_upload.sh"><code>scripts/md5sums_for_data_upload.sh</code></a></p>
 <h3 id="usage">Usage</h3>
 <p>Download the script and place it in the directory that is one level above the data directory containing the files for which you want to compute the md5sums.</p>
 <h3 id="basic-command">Basic command</h3>
@@ -112,10 +112,10 @@
 ./md5sums_for_data_upload.sh &lt;input_dir&gt; --per_file
 </code></pre>
 <h2 id="windows">Windows</h2>
-<p>⚠️ <strong>Important Note:</strong> We strongly recommend using <strong>Windows Subsystem for Linux (WSL)</strong>  as explained <a href="../wsl/">here</a>. You can then follow the instructions for Linux/MacOS.</p>
+<p>⚠️ <strong>Important Note:</strong> We strongly recommend using <strong>Windows Subsystem for Linux (WSL)</strong>  as explained <a href="wsl.html">here</a>. You can then follow the instructions for Linux/MacOS.</p>
 <p>This script calculates MD5 checksums of all files in the specified directory and saves them to a file named <code>checksums.md5</code> inside the <code>&lt;input directory&gt;</code>.</p>
 <h3 id="location_1">Location</h3>
-<p>The script is available here: <a href="../scripts/md5sums_for_data_upload_windows.ps1"><code>md5sums_for_data_upload_windows.ps1</code></a></p>
+<p>The script is available here: <a href="scripts/md5sums_for_data_upload_windows.ps1"><code>md5sums_for_data_upload_windows.ps1</code></a></p>
 <h3 id="usage_1">Usage</h3>
 <ol>
 <li><strong>Download the script</strong> and place it in the directory that is one level above the data directory containing the files for which you want to compute the md5sums.<br />
@@ -146,14 +146,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script>
-            var base_url = "..",
+            var base_url = ".",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

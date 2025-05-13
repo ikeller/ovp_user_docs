@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="canonical" href="https://ikeller.github.io/ovp_user_docs/data_upload.html">
+        <link rel="shortcut icon" href="img/favicon.ico">
         <title>Home - OVPrecision Data Upload</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <link href="../assets/css/styles.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
@@ -21,7 +21,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">OVPrecision Data Upload</a>
+                <a class="navbar-brand" href=".">OVPrecision Data Upload</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -32,13 +32,13 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem active">
-                                <a href="./" class="nav-link">Home</a>
+                                <a href="data_upload.html" class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="../md5sums/" class="nav-link">md5sums</a>
+                                <a href="md5sums.html" class="nav-link">md5sums</a>
                             </li>
                             <li class="navitem">
-                                <a href="../wsl/" class="nav-link">WSL</a>
+                                <a href="wsl.html" class="nav-link">WSL</a>
                             </li>
                         </ul>
 
@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../md5sums/" class="nav-link">
+                                <a rel="next" href="md5sums.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -320,7 +320,7 @@ Table 4: Templates for the metadata file for different data types</p>
 <code>O-MABADAB__multiqc_report.html</code></p>
 <h2 id="4-calculate-md5sums">4. Calculate md5sums</h2>
 <p>md5sums allow us to ensure that the files were not corrupted during the transfer from your local machine to LeoMed. Therefore, you need to provide md5sums for all files that you upload.</p>
-<p>For detailed instructions on calculating md5sums using a convenient script, refer to <a href="../md5sums/">this guide</a>. Using the script is optional, and you are free to choose an alternative method if you prefer. You can submit either a single md5sum file that contains checksums for all files in the folder, or provide a separate md5sum file for each individual file.</p>
+<p>For detailed instructions on calculating md5sums using a convenient script, refer to <a href="md5sums.html">this guide</a>. Using the script is optional, and you are free to choose an alternative method if you prefer. You can submit either a single md5sum file that contains checksums for all files in the folder, or provide a separate md5sum file for each individual file.</p>
 <p>After step 4, your data directories (raw and/or derived) will contain your data files, a metadata file and one or multiple files with md5sums. For example:</p>
 <pre><code>raw/
   &lt;sample-ID&gt;-&lt;any name&gt;__01.tiff
@@ -345,7 +345,7 @@ Table 4: Templates for the metadata file for different data types</p>
 </code></pre>
 <p><strong>ETH members need to be connected to the ETH network via VPN</strong> before starting the upload. External users must make sure they are using an IP
 address that was allow-listed during the onboarding process.</p>
-<p>Instructions are provided for Linux and Mac users only. For Windows users, we highly recommend installing the Windows Subsystem for Linux (WSL), which then enables you to follow the same steps. Please find more details <a href="../wsl/">here</a>. <a href="mailto:irene.keller@sdsc.ethz.ch">Contact us</a> in case this is not a viable option for you.</p>
+<p>Instructions are provided for Linux and Mac users only. For Windows users, we highly recommend installing the Windows Subsystem for Linux (WSL), which then enables you to follow the same steps. Please find more details <a href="wsl.html">here</a>. <a href="mailto:irene.keller@sdsc.ethz.ch">Contact us</a> in case this is not a viable option for you.</p>
 <h3 id="initial-configuration">Initial Configuration</h3>
 <p>Before you upload data for the first time via the command line (Mac/Linux), you need to go through the following configuration step.
 This needs to be done only once.</p>
@@ -401,14 +401,14 @@ folders will be automatically created on LeoMed.</p>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script>
-            var base_url = "..",
+            var base_url = ".",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
